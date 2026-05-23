@@ -320,6 +320,24 @@
 .demo-frame { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background: #000; }
 .demo-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 .demo-caption { font-size: 13px; color: rgba(255,255,255,.75); margin-top: 12px; line-height: 1.5; }
+
+/* Bar chart */
+.stat-pre-line { font-size: 16px; color: #fff; margin-bottom: 16px; }
+.stat-chart { display: flex; align-items: flex-end; justify-content: center; gap: 18px; height: 200px; padding: 14px 16px 0; background: rgba(0,0,0,.25); border-radius: 12px; margin-bottom: 14px; }
+.bar { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 0 0 90px; max-width: 110px; height: 100%; gap: 6px; }
+.bar-bg { width: 100%; height: 100%; display: flex; align-items: flex-end; }
+.bar-fill { width: 100%; border-radius: 8px 8px 0 0; transition: height 1s ease-out; }
+.bar-sunny .bar-fill { background: linear-gradient(to top, #1565C0, #64B5F6); }
+.bar-rainy .bar-fill { background: linear-gradient(to top, #B71C1C, #E53935); box-shadow: 0 0 18px rgba(229,57,53,.6); animation: pulseRed 2s ease-in-out infinite; }
+@keyframes pulseRed { 0%,100% { box-shadow: 0 0 18px rgba(229,57,53,.6); } 50% { box-shadow: 0 0 30px rgba(229,57,53,.9); } }
+.bar-val { font-size: 28px; font-weight: 900; color: #fff; line-height: 1; }
+.bar-sunny .bar-val { color: #90CAF9; }
+.bar-rainy .bar-val { color: #FF8A80; font-size: 38px; }
+.bar-rainy .bar-val small { font-size: 18px; font-weight: 900; }
+.bar-label { font-size: 12px; color: rgba(255,255,255,.85); font-weight: 700; }
+.bar-vs { font-size: 18px; color: #FFD54F; font-weight: 900; padding-bottom: 60px; }
+.stat-conclusion-num { font-size: 20px; color: #fff; margin-bottom: 4px; }
+.stat-conclusion-num strong { color: #FF8A80; font-size: 28px; font-weight: 900; }
 </style>
 </head>
 <body>
@@ -388,8 +406,8 @@
   <!-- Part 1: 共感ペインポイント -->
   <div class="pain-section">
     <div class="pain-hero">
-      <img src="https://images.pexels.com/photos/12348278/pexels-photo-12348278.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" alt="夜の雨道のフロントガラス" loading="lazy">
-      <div class="pain-hero-text">夜の雨道、こんな視界に<br><strong>ヒヤッとした経験は？</strong></div>
+      <img src="https://images.pexels.com/photos/35539024/pexels-photo-35539024.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" alt="雨の夜道で水たまりに突っ込む車" loading="lazy">
+      <div class="pain-hero-text">雨の日の運転、<br><strong>事故になりかけた経験は？</strong></div>
     </div>
 
     <div class="pain-title">⚠️ こんな経験、ありませんか？</div>
@@ -405,10 +423,24 @@
   <div class="stat-section">
     <div class="stat-label">📊 実は知っていますか？</div>
     <div class="stat-big">
-      <div class="stat-pre">雨の日の死傷事故は</div>
-      <div class="stat-mid">晴天時の<span class="big-num-new">約4倍</span></div>
-      <div class="stat-source">※首都高速道路調べ</div>
+
+    <div class="stat-pre-line">📊 雨の日の死傷事故は</div>
+    <div class="stat-chart">
+      <div class="bar bar-sunny">
+        <div class="bar-bg"><div class="bar-fill" style="height: 25%"></div></div>
+        <div class="bar-val">1</div>
+        <div class="bar-label">☀️ 晴天時</div>
+      </div>
+      <div class="bar-vs">vs</div>
+      <div class="bar bar-rainy">
+        <div class="bar-bg"><div class="bar-fill" style="height: 100%"></div></div>
+        <div class="bar-val">4<small>倍</small></div>
+        <div class="bar-label">🌧️ 雨天時</div>
+      </div>
     </div>
+    <div class="stat-conclusion-num">晴天時の<strong>約4倍</strong>に増加</div>
+    <div class="stat-source">※首都高速道路調べ</div>
+  </div>
     <div class="stat-cause">▶ 原因の多くは<strong>「視界不良」</strong>と<strong>「スリップ」</strong></div>
     <div class="stat-conclusion">視界不良はドライバーの判断を一瞬で奪います。<br>雨の日の安心は、<strong>視界確保から。</strong></div>
   </div>
