@@ -307,6 +307,19 @@
 .bn-emoji { font-size: 32px; flex-shrink: 0; line-height: 1; }
 .bn-headline { font-size: 16px; font-weight: 900; color: #FFD54F; margin-bottom: 3px; }
 .bn-detail { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.6; }
+
+/* ===== Visual additions (images + video) ===== */
+.pain-hero { position: relative; border-radius: 14px; overflow: hidden; margin-bottom: 18px; }
+.pain-hero img { width: 100%; height: 220px; object-fit: cover; display: block; filter: brightness(0.55); }
+.pain-hero-text { position: absolute; bottom: 18px; left: 18px; right: 18px; color: #fff; font-size: 17px; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
+.pain-hero-text strong { color: #FFB199; font-size: 22px; font-weight: 900; display: block; margin-top: 4px; }
+.droplets-banner { margin: 0 16px 16px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+.droplets-banner img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.demo-section { background: linear-gradient(135deg, #0D1B2A, #1a237e); border: 2px solid #4FC3F7; border-radius: 20px; margin: 0 16px 16px; padding: 22px 18px; text-align: center; }
+.demo-title { font-size: 20px; font-weight: 900; color: #4FC3F7; margin-bottom: 14px; letter-spacing: 1px; }
+.demo-frame { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background: #000; }
+.demo-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.demo-caption { font-size: 13px; color: rgba(255,255,255,.75); margin-top: 12px; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -343,6 +356,16 @@
     </div>
     <div class="countdown-ended" id="cd-ended">⚠️ キャンペーン終了</div>
   </div>
+
+  <!-- Official Demo Video -->
+  <div class="demo-section">
+    <div class="demo-title">🎬 メーカー公式デモ動画</div>
+    <div class="demo-frame">
+      <iframe src="https://www.youtube.com/embed/ZoiU8Dl4jK0" title="ダブルジェットガラコ耐久強化 公式デモ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="demo-caption">📺 ソフト99公式：ダブルジェットノズルの噴射＆撥水デモ</div>
+  </div>
+
 </div>
 
 <!-- 価格 -->
@@ -375,6 +398,11 @@
 
   <!-- Part 1: 共感ペインポイント -->
   <div class="pain-section">
+    <div class="pain-hero">
+      <img src="https://images.pexels.com/photos/12348278/pexels-photo-12348278.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" alt="夜の雨道のフロントガラス" loading="lazy">
+      <div class="pain-hero-text">夜の雨道、こんな視界に<br><strong>ヒヤッとした経験は？</strong></div>
+    </div>
+
     <div class="pain-title">⚠️ こんな経験、ありませんか？</div>
     <div class="pain-grid">
       <div class="pain-card"><div class="pain-emoji">🌃</div><div class="pain-text">夜の雨道、対向車のライトで<strong>前が滲んで眩しい</strong></div></div>
@@ -397,7 +425,12 @@
   </div>
 
   <!-- Part 3: 解決 - 3ステップ -->
-  <div class="solnew-section">
+  
+  <!-- Visual: water droplets -->
+  <div class="droplets-banner">
+    <img src="https://images.pexels.com/photos/805872/pexels-photo-805872.jpeg?auto=compress&cs=tinysrgb&w=1200&h=500&fit=crop" alt="水滴がコロコロ転がる撥水イメージ" loading="lazy">
+  </div>
+<div class="solnew-section">
     <div class="solnew-title">✨ そのお悩み、<span class="hl">3秒</span>で解決します</div>
     <div class="step-grid-new">
       <div class="step-card-new"><div class="step-num-new">STEP 1</div><div class="step-icon-new">🚿</div><div class="step-title-new">吹付け</div><div class="step-desc-new">ガラスに直接</div></div>
