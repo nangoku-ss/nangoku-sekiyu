@@ -421,7 +421,6 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 </script>
 <script>
-// カウントダウン: 2026/5/29(金) 19:00 JST まで
 (function(){
   var target = new Date("2026-05-29T19:00:00+09:00").getTime();
   var elDays=document.getElementById("cd-days"),elHours=document.getElementById("cd-hours"),elMin=document.getElementById("cd-min"),elSec=document.getElementById("cd-sec"),elEnded=document.getElementById("cd-ended"),elTimer=document.getElementById("timer");
@@ -429,7 +428,10 @@ setInterval(updateCountdown, 1000);
   var timerId=null;
   function tick(){
     var diff=target-Date.now();
+    if(isNaN(diff)){return;}
     if(diff<=0){if(elTimer)elTimer.style.display="none";if(elEnded)elEnded.style.display="block";if(timerId)clearInterval(timerId);return;}
+    if(elTimer)elTimer.style.display="";
+    if(elEnded)elEnded.style.display="none";
     var days=Math.floor(diff/86400000),hours=Math.floor((diff%86400000)/3600000),mins=Math.floor((diff%3600000)/60000),secs=Math.floor((diff%60000)/1000);
     if(elDays)elDays.textContent=days;
     if(elHours)elHours.textContent=pad(hours);
