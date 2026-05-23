@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- analytics removed in preview -->
+
+<!-- analytics removed in preview -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【プレビュー】限定キャンペーン｜南国石油</title>
+<!-- noindex: 検索エンジンに登録しない（隠しページ） -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {h
+    --blue: #1565C0;
+    --gold: #F5A623;
+    --red: #E53935;
+    --dark: #0D1B2A;
+  }
+  body {
+    font-family: 'Hiragino Kaku Gothic Pro','Meiryo','Yu Gothic',sans-serif;
+    background: #0D1B2A;
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  /* ===== ヘッダー ===== */
+  header {
+    background: linear-gradient(135deg, #1a237e, #1565C0);
+    text-align: center;
+    padding: 18px 20px 14px;
+    border-bottom: 3px solid var(--gold);
+  }
+  .header-logo {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .header-logo img { height: 38px; }
+  .header-logo span { font-size: 22px; font-weight: 900; letter-spacing: 4px; color: #fff; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,.6); letter-spacing: 3px; margin-top: 4px; }
+
+  /* ===== メインバナー ===== */
+  .main-banner {
+    background: linear-gradient(135deg, #0D1B2A 0%, #1a237e 50%, #0D47A1 100%);
+    text-align: center;
+    padding: 28px 20px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .main-banner::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(245,166,35,.08);
+  }
+  .campaign-label {
+    display: inline-block;
+    background: var(--red);
+    color: #fff; font-size: 13px; font-weight: 900;
+    padding: 5px 20px; border-radius: 30px;
+    letter-spacing: 2px; margin-bottom: 12px;
+    box-shadow: 0 4px 14px rgba(229,57,53,.5);
+  }
+  .campaign-title {
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 900; line-height: 1.3;
+    color: #fff; letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .campaign-title em { color: var(--gold); font-style: normal; }
+
+  /* ===== カウントダウン ===== */
+  .countdown-section {
+    background: linear-gradient(135deg, #1B2A1B, #1a3a1a);
+    border: 2px solid #4CAF50;
+    border-radius: 20px;
+    margin: 16px auto;
+    max-width: 600px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .countdown-label {
+    font-size: 13px; color: #A5D6A7; font-weight: 700;
+    letter-spacing: 2px; margin-bottom: 10px;
+  }
+  .countdown-period {
+    font-size: 13px; color: rgba(255,255,255,.7); margin-bottom: 10px;
+  }
+  .countdown-timer {
+    display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+  }
+.countdown-prefix {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; color: #A5D6A7;
+  letter-spacing: 1px; padding: 0 6px;
+}
+
+  .countdown-block {
+    background: rgba(0,0,0,.4);
+    border: 1.5px solid rgba(76,175,80,.5);
+    border-radius: 12px;
+    padding: 8px 14px; min-width: 64px;
+    text-align: center;
+  }
+  .countdown-num {
+    font-size: 32px; font-weight: 900; color: #69F0AE;
+    line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .countdown-unit {
+    font-size: 11px; color: rgba(255,255,255,.6); margin-top: 2px;
+  }
+  .countdown-ended {
+    font-size: 20px; font-weight: 900; color: var(--red);
+    display: none;
+  }
+
+  /* ===== 価格ブロック ===== */
+  .price-section {
+    max-width: 600px; margin: 0 auto 16px;
+    background: linear-gradient(135deg, #2a1a00, #3a2800);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .price-period {
+    font-size: 12px; color: rgba(255,255,255,.6);
+    background: rgba(255,255,255,.1); border-radius: 20px;
+    padding: 4px 14px; display: inline-block; margin-bottom: 12px;
+  }
+  .price-regular {
+    font-size: 14px; color: rgba(255,255,255,.5);
+    text-decoration: line-through; margin-bottom: 4px;
+  }
+  .price-sale-wrap {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .price-arrow { font-size: 28px; color: var(--red); font-weight: 900; }
+  .price-sale {
+    font-size: 52px; font-weight: 900; color: var(--red);
+    line-height: 1; text-shadow: 0 4px 20px rgba(229,57,53,.5);
+  }
+  .price-tax { font-size: 13px; color: rgba(255,255,255,.6); }
+  .price-badges {
+    display: flex; justify-content: center; gap: 10px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .price-badge {
+    background: var(--red); color: #fff;
+    font-size: 14px; font-weight: 900;
+    padding: 6px 16px; border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(229,57,53,.4);
+  }
+
+  /* ===== 商品画像 ===== */
+  .product-image-section {
+    max-width: 600px; margin: 0 auto 16px; padding: 0 16px;
+    text-align: center;
+  }
+  .product-image-section img {
+    width: 100%; max-width: 500px; border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  }
+
+  /* ===== 特徴・スペック ===== */
+  .features-section {
+    max-width: 600px; margin: 0 auto 16px; padding: 0 16px;
+  }
+  .section-title {
+    font-size: 16px; font-weight: 900; color: var(--gold);
+    letter-spacing: 2px; border-left: 4px solid var(--gold);
+    padding-left: 12px; margin-bottom: 12px;
+  }
+  .feature-list {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px; padding: 12px 16px;
+  }
+  .feature-check {
+    width: 24px; height: 24px; flex-shrink: 0;
+    background: linear-gradient(135deg, #1565C0, #0288D1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; margin-top: 1px;
+  }
+  .feature-text { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.9); }
+  .feature-text strong { color: var(--gold); font-size: 16px; }
+
+  /* ===== スペックテーブル ===== */
+  .spec-section {
+    max-width: 600px; margin: 0 auto 16px; padding: 0 16px;
+  }
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table tr { border-bottom: 1px solid rgba(255,255,255,.1); }
+  .spec-table tr:last-child { border-bottom: none; }
+  .spec-table th {
+    background: rgba(21,101,192,.3);
+    color: rgba(255,255,255,.7); font-size: 12px; font-weight: 700;
+    padding: 10px 14px; width: 38%; text-align: left;
+    letter-spacing: 1px;
+  }
+  .spec-table td {
+    font-size: 14px; font-weight: 700; color: #fff;
+    padding: 10px 14px; line-height: 1.5;
+  }
+
+  /* ===== CTAボタン ===== */
+  .cta-section {
+    max-width: 600px; margin: 0 auto 24px; padding: 0 16px;
+    text-align: center;
+  }
+  .cta-note {
+    font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 14px;
+  }
+  .cta-buttons { display: flex; flex-direction: column; gap: 12px; }
+  .btn-line {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: #06C755; color: #fff;
+    font-size: 18px; font-weight: 900; letter-spacing: 2px;
+    padding: 16px 24px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(6,199,85,.4);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-line:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(6,199,85,.5); }
+  .btn-tel {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: linear-gradient(135deg, #1565C0, #0288D1);
+    color: #fff; font-size: 18px; font-weight: 900;
+    padding: 16px 24px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(21,101,192,.4);
+    transition: transform .2s;
+  }
+  .btn-tel:hover { transform: translateY(-2px); }
+  .btn-mail {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.3);
+    color: #fff; font-size: 16px; font-weight: 700;
+    padding: 14px 24px; border-radius: 50px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .btn-mail:hover { background: rgba(255,255,255,.2); }
+
+  /* ===== フッター ===== */
+  footer {
+    background: rgba(0,0,0,.4);
+    border-top: 1px solid rgba(255,255,255,.1);
+    text-align: center; padding: 20px;
+    font-size: 12px; color: rgba(255,255,255,.4);
+    letter-spacing: 2px;
+  }
+  .footer-back {
+    display: inline-block; margin-bottom: 10px;
+    color: rgba(255,255,255,.6); text-decoration: none;
+    font-size: 13px;
+  }
+  .footer-back:hover { color: #fff; }
+  .notice { font-size: 11px; color: rgba(255,255,255,.4); margin-top: 8px; line-height: 1.6; }
+
+  /* セパレーター */
+  .sep { height: 1px; background: rgba(255,255,255,.07); margin: 4px 0 16px; }
+
+/* ===== NEW: 不安喚起→解決提示セクション ===== */
+.why-section { margin: 24px 0; }
+/* Part 1: ペインポイント */
+.pain-section { background: linear-gradient(135deg, #2A0F0F, #1B0F1B); border-radius: 20px; margin: 0 16px 16px; padding: 24px 20px; border: 1px solid rgba(229,57,53,.35); }
+.pain-title { font-size: 20px; font-weight: 900; color: #FF6B6B; text-align: center; letter-spacing: 2px; margin-bottom: 20px; }
+.pain-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.pain-card { background: rgba(229,57,53,.08); border-left: 4px solid #E53935; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; }
+.pain-emoji { font-size: 30px; flex-shrink: 0; line-height: 1; }
+.pain-text { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.92); }
+.pain-text strong { color: #FFB199; font-weight: 900; }
+/* Part 2: 衝撃データ */
+.stat-section { background: linear-gradient(135deg, #1B0F0F, #0F0F1B); border: 2px solid #E53935; border-radius: 20px; margin: 0 16px 16px; padding: 22px 20px; text-align: center; box-shadow: 0 8px 28px rgba(229,57,53,.3); }
+.stat-label { font-size: 13px; color: #FFD54F; font-weight: 700; letter-spacing: 2px; margin-bottom: 14px; }
+.stat-big { background: rgba(0,0,0,.4); border-radius: 14px; padding: 18px 14px; margin: 0 auto 14px; max-width: 380px; }
+.stat-pre { font-size: 15px; color: #fff; margin-bottom: 6px; }
+.stat-mid { font-size: 18px; color: #fff; font-weight: 700; }
+.big-num-new { display: inline-block; font-size: 56px; color: #E53935; font-weight: 900; text-shadow: 0 4px 18px rgba(229,57,53,.5); letter-spacing: 1px; line-height: 1; vertical-align: middle; margin: 0 4px; }
+.stat-source { font-size: 10px; color: rgba(255,255,255,.5); margin-top: 8px; }
+.stat-cause { font-size: 14px; color: #fff; margin-bottom: 14px; }
+.stat-cause strong { color: #FFD54F; }
+.stat-conclusion { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.7; border-top: 1px solid rgba(255,255,255,.12); padding-top: 14px; }
+.stat-conclusion strong { color: #FFD54F; font-size: 16px; }
+/* Part 3: 3ステップ */
+.solnew-section { background: linear-gradient(135deg, #0D2A1B, #0D1B2A); border: 2px solid #FFD54F; border-radius: 20px; margin: 0 16px 16px; padding: 22px 20px; text-align: center; }
+.solnew-title { font-size: 20px; font-weight: 900; color: #FFD54F; margin-bottom: 18px; letter-spacing: 1px; }
+.solnew-title .hl { color: #69F0AE; text-shadow: 0 0 10px rgba(105,240,174,.4); font-size: 28px; }
+.step-grid-new { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: nowrap; }
+.step-card-new { flex: 1; min-width: 0; background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,213,79,.45); border-radius: 12px; padding: 12px 6px; text-align: center; }
+.step-num-new { font-size: 10px; color: #FFD54F; font-weight: 900; letter-spacing: 1px; margin-bottom: 6px; }
+.step-icon-new { font-size: 36px; line-height: 1; margin-bottom: 4px; }
+.step-title-new { font-size: 13px; font-weight: 900; color: #fff; margin-bottom: 2px; }
+.step-desc-new { font-size: 10px; color: rgba(255,255,255,.7); line-height: 1.4; }
+.step-arrow { font-size: 16px; color: #FFD54F; flex-shrink: 0; }
+.solnew-time { font-size: 16px; color: #fff; margin-top: 16px; }
+.solnew-time strong { font-size: 22px; color: #69F0AE; font-weight: 900; }
+/* Part 4: ベネフィット */
+.bn-section { background: linear-gradient(135deg, #1B2A0D, #2A1B0D); border: 2px solid #FFD54F; border-radius: 20px; margin: 0 16px 16px; padding: 22px 20px; }
+.bn-title { font-size: 20px; font-weight: 900; color: #FFD54F; text-align: center; margin-bottom: 18px; letter-spacing: 2px; }
+.bn-list { display: flex; flex-direction: column; gap: 12px; }
+.bn-row { background: rgba(255,255,255,.06); border-left: 4px solid #FFD54F; border-radius: 10px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; }
+.bn-emoji { font-size: 32px; flex-shrink: 0; line-height: 1; }
+.bn-headline { font-size: 16px; font-weight: 900; color: #FFD54F; margin-bottom: 3px; }
+.bn-detail { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <div class="header-logo">
+    <img src="https://nangoku-ss.github.io/nangoku-sekiyu/%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3__.png" alt="南国石油">
+    <span>南国石油</span>
+  </div>
+  <div class="header-sub">NANGOKU SEKIYU</div>
+</header>
+
+<!-- メインバナー -->
+<div class="main-banner">
+  <div class="campaign-label">🔥 期間限定キャンペーン</div>
+  <div class="campaign-title">
+    【限定】雨の日脅威の<br>
+    <em>「ガラコ キャン Wジェット」</em>
+  </div>
+</div>
+
+<!-- カウントダウン -->
+<div style="padding: 0 16px;">
+  <div class="countdown-section">
+    <div class="countdown-label">⏰ キャンペーン終了まで</div>
+    <div class="countdown-period">📅 キャンペーン期間：5/22（金）〜5/29（金）まで</div>
+    <div class="countdown-timer" id="timer">
+        <div class="countdown-prefix">残りあと</div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-days">--</div><div class="countdown-unit">日</div></div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-unit">時間</div></div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-min">--</div><div class="countdown-unit">分</div></div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-sec">--</div><div class="countdown-unit">秒</div></div>
+    </div>
+    <div class="countdown-ended" id="cd-ended">⚠️ キャンペーン終了</div>
+  </div>
+</div>
+
+<!-- 価格 -->
+<div style="padding: 0 16px;">
+  <div class="price-section">
+    <div class="price-period">📅 5/22（金）〜5/29（金）</div>
+    <div class="price-regular">通常価格 ¥850円（税抜）</div>
+    <div class="price-sale-wrap">
+      <div class="price-arrow">⇒</div>
+      <div>
+        <div class="price-sale">¥648<span style="font-size:22px;">円</span></div>
+        <div class="price-tax">（税抜）※価格はすべて税抜です</div>
+      </div>
+    </div>
+    <div class="price-badges">
+      <div class="price-badge">🏷️ ¥202円もお得！</div>
+      <div class="price-badge">🔥 なんと23%OFF！</div>
+    </div>
+  </div>
+</div>
+
+<!-- 商品画像（作成途中のため後から差し替え可） -->
+<div class="product-image-section">
+  <img id="product-img" src="" alt="ガラコ キャン Wジェット">
+</div>
+<!-- ============================ -->
+<!-- NEW: 不安喚起→解決提示セクション -->
+<!-- ============================ -->
+<div class="why-section">
+
+  <!-- Part 1: 共感ペインポイント -->
+  <div class="pain-section">
+    <div class="pain-title">⚠️ こんな経験、ありませんか？</div>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-emoji">🌃</div><div class="pain-text">夜の雨道、対向車のライトで<strong>前が滲んで眩しい</strong></div></div>
+      <div class="pain-card"><div class="pain-emoji">😨</div><div class="pain-text">ワイパーを動かしても<strong>水滴が残ってヒヤッ</strong></div></div>
+      <div class="pain-card"><div class="pain-emoji">⛈️</div><div class="pain-text">突然のゲリラ豪雨で<strong>信号・標識が見えづらい</strong></div></div>
+      <div class="pain-card"><div class="pain-emoji">👨‍👩‍👧</div><div class="pain-text">家族を乗せた雨の高速、<strong>正直 不安…</strong></div></div>
+    </div>
+  </div>
+
+  <!-- Part 2: 衝撃データ -->
+  <div class="stat-section">
+    <div class="stat-label">📊 実は知っていますか？</div>
+    <div class="stat-big">
+      <div class="stat-pre">雨の日の死傷事故は</div>
+      <div class="stat-mid">晴天時の<span class="big-num-new">約4倍</span></div>
+      <div class="stat-source">※首都高速道路調べ</div>
+    </div>
+    <div class="stat-cause">▶ 原因の多くは<strong>「視界不良」</strong>と<strong>「スリップ」</strong></div>
+    <div class="stat-conclusion">視界不良はドライバーの判断を一瞬で奪います。<br>雨の日の安心は、<strong>視界確保から。</strong></div>
+  </div>
+
+  <!-- Part 3: 解決 - 3ステップ -->
+  <div class="solnew-section">
+    <div class="solnew-title">✨ そのお悩み、<span class="hl">3秒</span>で解決します</div>
+    <div class="step-grid-new">
+      <div class="step-card-new"><div class="step-num-new">STEP 1</div><div class="step-icon-new">🚿</div><div class="step-title-new">吹付け</div><div class="step-desc-new">ガラスに直接</div></div>
+      <div class="step-arrow">▶</div>
+      <div class="step-card-new"><div class="step-num-new">STEP 2</div><div class="step-icon-new">💧</div><div class="step-title-new">水で流す</div><div class="step-desc-new">雨ならそのままOK</div></div>
+      <div class="step-arrow">▶</div>
+      <div class="step-card-new"><div class="step-num-new">STEP 3</div><div class="step-icon-new">✨</div><div class="step-title-new">サッと拭く</div><div class="step-desc-new">コーティング完了！</div></div>
+    </div>
+    <div class="solnew-time">⏱ たった<strong>3秒</strong>で完了！</div>
+  </div>
+
+  <!-- Part 4: 3大ベネフィット -->
+  <div class="bn-section">
+    <div class="bn-title">💪 3大ベネフィット</div>
+    <div class="bn-list">
+      <div class="bn-row"><div class="bn-emoji">🌊</div><div><div class="bn-headline">驚きの撥水力</div><div class="bn-detail">時速50km以上ならワイパーいらず、水滴がコロコロ転がる</div></div></div>
+      <div class="bn-row"><div class="bn-emoji">🛡️</div><div><div class="bn-headline">耐久性50%UP</div><div class="bn-detail">一度の施工で長持ち、コスパも◎</div></div></div>
+      <div class="bn-row"><div class="bn-emoji">🌙</div><div><div class="bn-headline">夜間視界もクッキリ</div><div class="bn-detail">対向車ライトの眩しさを軽減、安全運転をサポート</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- 商品特徴 -->
+<div class="features-section">
+  <div class="section-title">✨ 商品の特徴</div>
+  <div class="feature-list">
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>超飛距離噴射</strong><br>ダブルジェットノズルで広範囲にしっかり噴射。窓全体に素早く塗布できます。</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>雨の日3秒コーティング</strong><br>雨の日でも3秒で撥水コーティング完了。忙しい方にぴったりです。</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>耐久性50%アップ</strong><br>従来品比で耐久性が50%向上。長持ちする撥水効果で視界を守ります。</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-check">✓</div>
+      <div class="feature-text"><strong>驚きの撥水力</strong><br>水滴がコロコロと転がり、雨天時の視界を劇的に改善します。</div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- スペック -->
+<div class="spec-section">
+  <div class="section-title">📋 商品スペック</div>
+  <table class="spec-table">
+    <tr><th>商品名</th><td>ガラコ キャン Wジェット（耐久強化）</td></tr>
+    <tr><th>メーカー</th><td>ソフト99（SOFT99）</td></tr>
+    <tr><th>タイプ</th><td>スプレータイプ</td></tr>
+    <tr><th>特徴</th><td>ダブルジェットノズル / 雨天施工可能 / 耐久性50%UP</td></tr>
+    <tr><th>通常価格</th><td>¥850円（税抜）</td></tr>
+    <tr><th>キャンペーン価格</th><td style="color:#E53935; font-size:18px;">¥648円（税抜）</td></tr>
+    <tr><th>キャンペーン期間</th><td>2025年5月22日（金）〜5月29日（金）</td></tr>
+    <tr><th>取扱店舗</th><td>南国石油（知名店）</td></tr>
+  </table>
+</div>
+
+<div class="sep"></div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="section-title">📞 お問い合わせ・ご購入</div>
+  <div style="background:linear-gradient(135deg,#1B5E20,#2E7D32); border:2px solid #4CAF50; border-radius:16px; padding:14px 20px; text-align:center; margin-bottom:14px;">
+    <div style="font-size:22px; font-weight:900; color:#A5D6A7; letter-spacing:2px; margin-bottom:4px;">🏪 店頭にて販売中！</div>
+    <div style="font-size:14px; color:rgba(255,255,255,.8); line-height:1.6;">南国石油（知名店）でお買い求めいただけます<br>在庫状況はお電話・LINEにてご確認ください</div>
+  </div>
+  <div class="cta-note">南国石油 店頭にて販売中です！🛒 お気軽にお問い合わせください😊</div>
+  <div class="cta-buttons">
+    <a href="https://line.me/ti/p/@416kxury" class="btn-line" target="_blank">
+      <span style="font-size:22px;">💬</span> LINEで問い合わせる
+    </a>
+    <a href="tel:0997932059" class="btn-tel">
+      <span style="font-size:22px;">☎️</span> 0997-93-2059
+    </a></div>
+  <div class="notice">
+    📍 〒891-9111 鹿児島県大島郡知名町知名676-3<br>
+    ※数量に限りがございます。お早めにお問い合わせください。<br>
+    ※価格はすべて税抜表示です。
+  </div>
+</div>
+
+<!-- フッター -->
+<footer>
+  <a href="https://nangoku-ss.github.io/nangoku-sekiyu/" class="footer-back">← サイトトップへ戻る</a><br>
+  © 2025 南国石油 All Rights Reserved.
+</footer>
+
+<script>
+// 商品画像をBase64でセット
+(async () => {
+  // 画像はここに直接埋め込み済み（後でURLに差し替え可）
+  const img = document.getElementById('product-img');
+  // 外部URLがあれば: img.src = 'URL';
+  // 今は添付画像のBase64を使用
+  img.src = 'glaco-wjet.jpg';
+})();
+
+// カウントダウンタイマー
+function updateCountdown() {
+  const end = new Date('2025-05-29T23:59:59+09:00');
+  const now = new Date();
+  const diff = end - now;
+  
+  if (diff <= 0) {
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('cd-ended').style.display = 'block';
+    return;
+  }
+  
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const sec = Math.floor((diff % (1000 * 60)) / 1000);
+  
+  document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
+  document.getElementById('cd-sec').textContent = String(sec).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+<script>
+(function(){
+  var target = new Date("2026-05-29T19:00:00+09:00").getTime();
+  var elDays=document.getElementById("cd-days"),elHours=document.getElementById("cd-hours"),elMin=document.getElementById("cd-min"),elSec=document.getElementById("cd-sec"),elEnded=document.getElementById("cd-ended"),elTimer=document.getElementById("timer");
+  function pad(n){return String(n).padStart(2,"0");}
+  var timerId=null;
+  function tick(){
+    var diff=target-Date.now();
+    if(isNaN(diff)){return;}
+    if(diff<=0){if(elTimer)elTimer.style.display="none";if(elEnded)elEnded.style.display="block";if(timerId)clearInterval(timerId);return;}
+    if(elTimer)elTimer.style.display="";
+    if(elEnded)elEnded.style.display="none";
+    var days=Math.floor(diff/86400000),hours=Math.floor((diff%86400000)/3600000),mins=Math.floor((diff%3600000)/60000),secs=Math.floor((diff%60000)/1000);
+    if(elDays)elDays.textContent=days;
+    if(elHours)elHours.textContent=pad(hours);
+    if(elMin)elMin.textContent=pad(mins);
+    if(elSec)elSec.textContent=pad(secs);
+  }
+  tick();timerId=setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
