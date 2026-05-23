@@ -277,6 +277,50 @@
 
   /* セパレーター */
   .sep { height: 1px; background: rgba(255,255,255,.07); margin: 4px 0 16px; }
+
+/* ===== NEW: 不安喚起→解決提示セクション ===== */
+.why-section { margin: 24px 0; }
+/* Part 1: ペインポイント */
+.pain-section { background: linear-gradient(135deg, #2A0F0F, #1B0F1B); border-radius: 20px; margin: 0 16px 16px; padding: 24px 20px; border: 1px solid rgba(229,57,53,.35); }
+.pain-title { font-size: 20px; font-weight: 900; color: #FF6B6B; text-align: center; letter-spacing: 2px; margin-bottom: 20px; }
+.pain-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.pain-card { background: rgba(229,57,53,.08); border-left: 4px solid #E53935; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; }
+.pain-emoji { font-size: 30px; flex-shrink: 0; line-height: 1; }
+.pain-text { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.92); }
+.pain-text strong { color: #FFB199; font-weight: 900; }
+/* Part 2: 衝撃データ */
+.stat-section { background: linear-gradient(135deg, #1B0F0F, #0F0F1B); border: 2px solid #E53935; border-radius: 20px; margin: 0 16px 16px; padding: 22px 20px; text-align: center; box-shadow: 0 8px 28px rgba(229,57,53,.3); }
+.stat-label { font-size: 13px; color: #FFD54F; font-weight: 700; letter-spacing: 2px; margin-bottom: 14px; }
+.stat-big { background: rgba(0,0,0,.4); border-radius: 14px; padding: 18px 14px; margin: 0 auto 14px; max-width: 380px; }
+.stat-pre { font-size: 15px; color: #fff; margin-bottom: 6px; }
+.stat-mid { font-size: 18px; color: #fff; font-weight: 700; }
+.big-num-new { display: inline-block; font-size: 56px; color: #E53935; font-weight: 900; text-shadow: 0 4px 18px rgba(229,57,53,.5); letter-spacing: 1px; line-height: 1; vertical-align: middle; margin: 0 4px; }
+.stat-source { font-size: 10px; color: rgba(255,255,255,.5); margin-top: 8px; }
+.stat-cause { font-size: 14px; color: #fff; margin-bottom: 14px; }
+.stat-cause strong { color: #FFD54F; }
+.stat-conclusion { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.7; border-top: 1px solid rgba(255,255,255,.12); padding-top: 14px; }
+.stat-conclusion strong { color: #FFD54F; font-size: 16px; }
+/* Part 3: 3ステップ */
+.solnew-section { background: linear-gradient(135deg, #0D2A1B, #0D1B2A); border: 2px solid #FFD54F; border-radius: 20px; margin: 0 16px 16px; padding: 22px 20px; text-align: center; }
+.solnew-title { font-size: 20px; font-weight: 900; color: #FFD54F; margin-bottom: 18px; letter-spacing: 1px; }
+.solnew-title .hl { color: #69F0AE; text-shadow: 0 0 10px rgba(105,240,174,.4); font-size: 28px; }
+.step-grid-new { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: nowrap; }
+.step-card-new { flex: 1; min-width: 0; background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,213,79,.45); border-radius: 12px; padding: 12px 6px; text-align: center; }
+.step-num-new { font-size: 10px; color: #FFD54F; font-weight: 900; letter-spacing: 1px; margin-bottom: 6px; }
+.step-icon-new { font-size: 36px; line-height: 1; margin-bottom: 4px; }
+.step-title-new { font-size: 13px; font-weight: 900; color: #fff; margin-bottom: 2px; }
+.step-desc-new { font-size: 10px; color: rgba(255,255,255,.7); line-height: 1.4; }
+.step-arrow { font-size: 16px; color: #FFD54F; flex-shrink: 0; }
+.solnew-time { font-size: 16px; color: #fff; margin-top: 16px; }
+.solnew-time strong { font-size: 22px; color: #69F0AE; font-weight: 900; }
+/* Part 4: ベネフィット */
+.bn-section { background: linear-gradient(135deg, #1B2A0D, #2A1B0D); border: 2px solid #FFD54F; border-radius: 20px; margin: 0 16px 16px; padding: 22px 20px; }
+.bn-title { font-size: 20px; font-weight: 900; color: #FFD54F; text-align: center; margin-bottom: 18px; letter-spacing: 2px; }
+.bn-list { display: flex; flex-direction: column; gap: 12px; }
+.bn-row { background: rgba(255,255,255,.06); border-left: 4px solid #FFD54F; border-radius: 10px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 12px; }
+.bn-emoji { font-size: 32px; flex-shrink: 0; line-height: 1; }
+.bn-headline { font-size: 16px; font-weight: 900; color: #FFD54F; margin-bottom: 3px; }
+.bn-detail { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -338,6 +382,64 @@
 <div class="product-image-section">
   <img id="product-img" src="" alt="ガラコ キャン Wジェット">
 </div>
+
+<!-- ============================ -->
+<!-- NEW: 不安喚起→解決提示セクション -->
+<!-- ============================ -->
+<div class="why-section">
+
+  <!-- Part 1: 共感ペインポイント -->
+  <div class="pain-section">
+    <div class="pain-title">⚠️ こんな経験、ありませんか？</div>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-emoji">🌃</div><div class="pain-text">夜の雨道、対向車のライトで<strong>前が滲んで眩しい</strong></div></div>
+      <div class="pain-card"><div class="pain-emoji">😨</div><div class="pain-text">ワイパーを動かしても<strong>水滴が残ってヒヤッ</strong></div></div>
+      <div class="pain-card"><div class="pain-emoji">⛈️</div><div class="pain-text">突然のゲリラ豪雨で<strong>信号・標識が見えづらい</strong></div></div>
+      <div class="pain-card"><div class="pain-emoji">👨‍👩‍👧</div><div class="pain-text">家族を乗せた雨の高速、<strong>正直 不安…</strong></div></div>
+    </div>
+  </div>
+
+  <!-- Part 2: 衝撃データ -->
+  <div class="stat-section">
+    <div class="stat-label">📊 実は知っていますか？</div>
+    <div class="stat-big">
+      <div class="stat-pre">雨の日の死傷事故は</div>
+      <div class="stat-mid">晴天時の<span class="big-num-new">約4倍</span></div>
+      <div class="stat-source">※首都高速道路調べ</div>
+    </div>
+    <div class="stat-cause">▶ 原因の多くは<strong>「視界不良」</strong>と<strong>「スリップ」</strong></div>
+    <div class="stat-conclusion">視界不良はドライバーの判断を一瞬で奪います。<br>雨の日の安心は、<strong>視界確保から。</strong></div>
+  </div>
+
+  <!-- Part 3: 解決 - 3ステップ -->
+  <div class="solnew-section">
+    <div class="solnew-title">✨ そのお悩み、<span class="hl">3秒</span>で解決します</div>
+    <div class="step-grid-new">
+      <div class="step-card-new"><div class="step-num-new">STEP 1</div><div class="step-icon-new">🚿</div><div class="step-title-new">吹付け</div><div class="step-desc-new">ガラスに直接</div></div>
+      <div class="step-arrow">▶</div>
+      <div class="step-card-new"><div class="step-num-new">STEP 2</div><div class="step-icon-new">💧</div><div class="step-title-new">水で流す</div><div class="step-desc-new">雨ならそのままOK</div></div>
+      <div class="step-arrow">▶</div>
+      <div class="step-card-new"><div class="step-num-new">STEP 3</div><div class="step-icon-new">✨</div><div class="step-title-new">サッと拭く</div><div class="step-desc-new">コーティング完了！</div></div>
+    </div>
+    <div class="solnew-time">⏱ たった<strong>3秒</strong>で完了！</div>
+  </div>
+
+  <!-- Part 4: 3大ベネフィット -->
+  <div class="bn-section">
+    <div class="bn-title">💪 3大ベネフィット</div>
+    <div class="bn-list">
+      <div class="bn-row"><div class="bn-emoji">🌊</div><div><div class="bn-headline">驚きの撥水力</div><div class="bn-detail">時速50km以上ならワイパーいらず、水滴がコロコロ転がる</div></div></div>
+      <div class="bn-row"><div class="bn-emoji">🛡️</div><div><div class="bn-headline">耐久性50%UP</div><div class="bn-detail">一度の施工で長持ち、コスパも◎</div></div></div>
+      <div class="bn-row"><div class="bn-emoji">🌙</div><div><div class="bn-headline">夜間視界もクッキリ</div><div class="bn-detail">対向車ライトの眩しさを軽減、安全運転をサポート</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- 商品特徴 -->
+
 
 <!-- 商品特徴 -->
 <div class="features-section">
