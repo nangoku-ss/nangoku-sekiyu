@@ -338,6 +338,12 @@
 .bar-vs { font-size: 18px; color: #FFD54F; font-weight: 900; padding-bottom: 60px; }
 .stat-conclusion-num { font-size: 20px; color: #fff; margin-bottom: 4px; }
 .stat-conclusion-num strong { color: #FF8A80; font-size: 28px; font-weight: 900; }
+
+/* Accident banner inside stat section */
+.accident-banner { position: relative; border-radius: 14px; overflow: hidden; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(229,57,53,.4); }
+.accident-banner img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; filter: brightness(0.55) contrast(1.15) saturate(1.1); }
+.accident-text { position: absolute; bottom: 16px; left: 18px; right: 18px; color: #fff; font-size: 16px; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,.7); text-align: left; }
+.accident-text strong { color: #FF8A80; font-size: 22px; font-weight: 900; display: block; margin-top: 4px; text-shadow: 0 2px 12px rgba(229,57,53,.6), 0 2px 10px rgba(0,0,0,1); }
 </style>
 </head>
 <body>
@@ -421,6 +427,11 @@
 
   <!-- Part 2: 衝撃データ -->
   <div class="stat-section">
+    
+    <div class="accident-banner">
+      <img src="https://images.pexels.com/photos/35784044/pexels-photo-35784044.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="夜の街路で大破した車（事故イメージ）" loading="lazy">
+      <div class="accident-text">⚠️ 事故は<strong>他人事じゃない</strong></div>
+    </div>
     <div class="stat-label">📊 実は知っていますか？</div>
     <div class="stat-big">
 
